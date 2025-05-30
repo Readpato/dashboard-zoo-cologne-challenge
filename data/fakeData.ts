@@ -1,5 +1,5 @@
+import type { Animal, Fruit, Gender } from '~/types'
 import { faker } from '@faker-js/faker'
-import type { Animal, Fruit, Gender } from './types'
 
 export const AARON: Animal = {
   name: 'Aaron',
