@@ -63,6 +63,14 @@ Zookeepers reported that the error sometimes changes when reloading the page aft
 
 Alrighty, to fix the first functionality issue, we need to remove the `alert()` function in our `App.vue` file. It seems somebody from the Duisburg Zoo managed to add an alert function that was causing the error. We will definitely remove it and show them that we are not easily defeated!
 
+Onwards with the documentation:
+
+Loaded page: On a first glance, there's a a brief introduction of what our application purpose is, a warning about the continous attacks of Duisburg and a table that should be populated with the animals from our zoo but it appears to be empty.
+
+Problems that need to be resolved to address the issues:
+- Having the terminal open we can see that we have a specific typo error on the `server/api/animals.get/ts` file declaring that `ANlMALS is not declared`. Let us fix that error by addressing the typo and utilizing the correct constant.
+- The error which was also been propagated to the developer tools in the browser was preventing our `GET` endpoint to actually work correctly. Now that we have correctly addressed the issues we have our simple table up and running!
+
 ### Task 3: Start the documentation
 
 You got it to work! Nice, now the basic functionality is back for the zookeepers. This would be a great point to start on documenting the project. As you can see there is not even a readme file! The old IT Director seems to have left this project in bad shape. Please add documentation with basics on the project, how to start, stop, test, ... it and whatever else information you deem important.
