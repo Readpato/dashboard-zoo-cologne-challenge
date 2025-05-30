@@ -114,6 +114,8 @@ I kept looking a little bit and found out about the [`Math.max()`](https://devel
 
 Alright, test are passing! Take that Duisburg Zoo!
 
+Now that our function is tested and working, I have added some TSDoc comments to help future team members understand the code better :)
+
 ### Task 5: UI Fixing and Improvement
 
 The zookeepers report that the table is incomplete and different than usually. More specifically:
