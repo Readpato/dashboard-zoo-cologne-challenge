@@ -3,5 +3,6 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxt/test-utils/module',
+    '@vueuse/nuxt',
   ],
 })

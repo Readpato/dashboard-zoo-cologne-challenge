@@ -15,7 +15,9 @@ export default antfu(
   {
     ignores,
     yaml: false,
-
+    vue: {
+      a11y: true,
+    },
     rules: {
       // Do not force top-level callable defintions to use the `function` keyword, we want to allow arrow functions
       'antfu/top-level-function': 'off',
@@ -27,17 +29,20 @@ export default antfu(
       'style/brace-style': ['error', '1tbs'],
 
       // Always enforce an ending comma on every line
-      'comma-dangle': ['error', {
-        arrays: 'always-multiline',
-        objects: 'always-multiline',
-        functions: 'always-multiline',
-        exports: 'always-multiline',
-        imports: 'always-multiline',
-      }],
+      'comma-dangle': [
+        'error',
+        {
+          arrays: 'always-multiline',
+          objects: 'always-multiline',
+          functions: 'always-multiline',
+          exports: 'always-multiline',
+          imports: 'always-multiline',
+        },
+      ],
 
       // Enforce spacing around operations like `1 + 2`
       'space-infix-ops': ['error'],
-      'ts/space-infix-ops': ['error'],
+      '@/space-infix-ops': ['error'],
 
       // Consistently use `type` and not `interface` to declare object-types
       'ts/consistent-type-definitions': ['error', 'type'],
@@ -68,14 +73,7 @@ export default antfu(
       'no-console': [
         'error',
         {
-          allow: [
-            'info',
-            'warn',
-            'trace',
-            'error',
-            'group',
-            'groupEnd',
-          ],
+          allow: ['info', 'warn', 'trace', 'error', 'group', 'groupEnd'],
         },
       ],
     },
