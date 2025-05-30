@@ -92,7 +92,7 @@ We have also took the opportunity to:
 - Update dependencies to the latest versions
 - Add `simple-git-hooks` with `lint-staged` for code formatting and linting whenever we are commiting
 - Restructure the codebase for better maintainability
-- Create a CHANGELOG so we know which features we have added or removed
+- Create a CHANGELOG using [changelogen](https://github.com/unjs/changelogen) from the UnJS ecosystem, so we know which features we have added or removed
 
 ### Task 4: Test fixing
 
