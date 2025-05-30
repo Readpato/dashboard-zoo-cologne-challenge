@@ -1,20 +1,19 @@
 import { faker } from '@faker-js/faker'
 
 import { describe, expect, it } from 'vitest'
-import useCalculateAgeInYears from '~/utils/useCalculateAgeInYears'
 
-describe('the useCalculateAgeInYears composable', () => {
+describe('the calculateAgeInYears util', () => {
   it('handles over 100 years correctly', () => {
     const date = faker.date.between({
       from: '1800-01-01T00:00:00.000Z',
       to: '1900-01-01T00:00:00.000Z',
     })
-    expect(useCalculateAgeInYears(date)).toBeGreaterThanOrEqual(100)
+    expect(calculateAgeInYears(date)).toBeGreaterThanOrEqual(100)
   })
 
   // For the zookeepers its easier to conservatively assume that an animal is older rather than younger
   it('always rounds up', () => {
     const today = new Date()
-    expect(useCalculateAgeInYears(today)).toBe(1)
+    expect(calculateAgeInYears(today)).toBe(1)
   })
 })
