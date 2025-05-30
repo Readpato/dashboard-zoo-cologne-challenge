@@ -4,5 +4,4 @@ export default defineVitestConfig({
   test: {
     environment: 'nuxt',
   },
-  // any custom Vitest config you require
 })
