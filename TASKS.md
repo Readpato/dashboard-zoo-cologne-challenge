@@ -38,14 +38,17 @@ Please take stock fo the page using developer tools, your instincts, ... and wri
 
 // Your solution
 
-Hi there! Thank you for taking the time to read my annotations and ramblings as the new IT Director of the Cologne Zoo :)
+Hellow again! Thank you for taking the time to read my annotations and ramblings as the new IT Director of the Cologne Zoo :)
 
 Alright, the first thing I noticed is that we have an error `alert is not defined` that's appearing whenever the `pnpm run dev` command is executed. I will leave it as it is for now, as I will take a look into how the project is structured, peek into the `package.json` file to know which dependecies are available from the start, and observe the configuration of the tools that the previous IT Director has used.
-After taking a look into the the structure, I found that the main issue that the main issue from preventing the our dashboard to start is found in `app.vue` where there's a function invoked called `alert()` which isn't found. Not only that I have identified some other issues that should be addressed:
+
+After taking a look into the the structure, I found that the main issue that the main issue from preventing the our dashboard to start is found in `app.vue` where there's a function invoked called `alert()` which isn't declared. Not only that I have identified some other issues that should be addressed:
 
 - General structure of the dashboard could be improved by following a better structure, for example creating a folder called `types` which would hold our types in the root app or a `tests` folder that holds all our tests. This would help us to better organize our code and make it easier to maintain and extend in the future.
 - Outdated dependencies, there are some deprecated dependencies such as ESLint which has a new major release (v9+) and Nuxt as well, which utilizes the newest versions of Vue and allows us to use features like reactive props destructure, defineModel, etc. Having up to date dependencies allow us to utilize the newest features and improvements
 - Took a look into the configuration files of what the previous director used and I'm happy that even he was under duress from the Duisburg zoo he managed to write some config files like `eslint.config.js` or `.editorconfig` which allows us all employees to configure our editor and IDE to follow the same rules and conventions!
+
+Before tackling this issues above, we will move forward with the task number 2. As getting our app up and running is more important than fixing the structure and dependencies which doesn't directly affect our staff :)
 
 ### Task 2: Get the basics running again
 
