@@ -10,6 +10,8 @@ The following script takes you through tasks you should complete as part of your
 
 There will be no loop with the reviewer, so nobody is going to answer your notes, questions, musings, ... - their main aim is to showcase your thought process for a fellow developer who will inspect this challenge. For the texts you can write everything from a bullet list to a book, but be aware that in development we usually try to optimize for a combination of dense information + understandability by every team member. We firmly believe that good communication and conceptualization is as important to being a developer as the coding itself.
 
+// Pato: Hi there, I'm Patrick (but everyone calls me Pato). I find the paragraph below super on point, thanks for adding it!
+
 The challenge tries to be similar to the real-world with the kinds of problems and solutions that would occur in every-day-project-work. There will be no questions asking you to optimize runtime-complexity in O-notation to the max for algorithm Y - these sort of questions do not make any sense in our opinion. Being close to the real-world also means that you may bring in CSS/JS Libraries to help you develop, just make sure that everything still runs in stackblitz.
 
 The tool we use here is called `stackblitz`. It functions as a fully integrated development environment (IDE). You can go through the full challenge here. If you want to use your local environment you can also download the project using the small "cloud icon" at the top left corner of the screen, just right of "Project". _In the end, the challenge code must run in here inside `stackblitz`, so `pnpm run dev` has to work. If this is not the case, we will not be able to review your challenge!_
@@ -39,6 +41,7 @@ Please take stock fo the page using developer tools, your instincts, ... and wri
 ### Task 2: Get the basics running again
 
 Now that we know that is broken, let's try to get things running again, step by step. First we should aim to just get the project to start. Please fix the problem that stops `pnpm run dev` from working out. Then:
+
 - document the loaded page with a brief description,
 - document the problems that needed to be resolved to make it work (so that we can avoid and quicker fix them in the future!)
 
@@ -63,6 +66,7 @@ There's a failing test that for the age calculation helper. Can you figure out w
 ### Task 5: UI Fixing and Improvement
 
 The zookeepers report that the table is incomplete and different than usually. More specifically:
+
 - they are missing the `Name` column that used to be in _third_ place,
 - the table is sorted by weight, it used to be sorted by name,
 - the age of the animals should show the age in years and not the birthdate
@@ -83,6 +87,7 @@ The zookeepers want to be able to see all details of an animal. Please create su
 The zookeepers want a new feature: Calculate the food required for the next calendar month. Basically, the zookeepers want to ease their job and buy a month worth of food in advance. In order to do so they want you to calculate and display the food all animals need for the next month.
 
 To calculate the food an animal needs in kilograms in 1 day, the zookeepers use the following formula:
+
 1. Take height + weight and divide it by 250
 2. If the animal is:
     - older than 20 years, half the required food,
@@ -96,6 +101,7 @@ To calculate the food an animal needs in kilograms in 1 day, the zookeepers use 
 ### Task 8: Plan New Feature
 
 After the disastrous specification of the new UI feature in the previous task, the zooplanners now want to sit down with you to plan the next feature better before implementation begins. Together you come up with requirements that you write down from the user-perspective (the zookeepers):
+
 - I want to plan when to feed which animal,
 - Per animal I want to be able to plan a day + a fruit that I feed them
 - There should be an overview of all upcoming feeding tasks that tells me:
