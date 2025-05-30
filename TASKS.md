@@ -100,6 +100,20 @@ There's a failing test that for the age calculation helper. Can you figure out w
 
 // Your solution
 
+Back at it again! To solve this issue first I renamed `useCalculateAgeInYears` to `calculateAgeInYears`, since we are not returning a reactive value from the utility. This will help us differentiate between composables (which actually return reactive values) and utils (which do not return reactive values).
+
+Then I implemented the `@nuxt-test/test-utils` module and `vitest.config.ts` with the `nuxt` environment to be able to test the necessary util.
+
+After running the test suite we found out that our second test was failing, because it was expecting the calculation of age to be rounded up.
+
+After that I went to check out the problem with the running test. We got a problem because initially we where utilizing `Math.round()` and given that `differenceInMilliseconds` was giving us `0` as a result, because dividing by `0` is always `0`.
+actual age of the animal.
+After researching on MDN, my first solution was to try to fix by only using [`Math.ceil`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/ceil) but of course that didn't work because if we round `0` to well... `0` it will always return `0`.
+
+I kept looking a little bit and found out about the [`Math.max()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max) function which will return the maximum value between two numbers. So, in this case if we run `Math.max(0, 1)` where `0` is our `ageInYears`, we will always get `1` or the greater age of the animal.
+
+Alright, test are passing! Take that Duisburg Zoo!
+
 ### Task 5: UI Fixing and Improvement
 
 The zookeepers report that the table is incomplete and different than usually. More specifically:
