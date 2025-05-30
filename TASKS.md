@@ -68,6 +68,7 @@ Onwards with the documentation:
 Loaded page: On a first glance, there's a a brief introduction of what our application purpose is, a warning about the continous attacks of Duisburg and a table that should be populated with the animals from our zoo but it appears to be empty.
 
 Problems that need to be resolved to address the issues:
+
 - Having the terminal open we can see that we have a specific typo error on the `server/api/animals.get/ts` file declaring that `ANlMALS is not declared`. Let us fix that error by addressing the typo and utilizing the correct constant.
 - The error which was also been propagated to the developer tools in the browser was preventing our `GET` endpoint to actually work correctly. Now that we have correctly addressed the issues we have our simple table up and running!
 
@@ -78,6 +79,20 @@ You got it to work! Nice, now the basic functionality is back for the zookeepers
 Add your solution below, either as an inline text or link to new documentation file(s) you've created.
 
 // Your solution
+
+Alright, now that we had our app up and running so that our staff can use it, we took the time to write the documentation in our [README](README.md) file, which states:
+
+- Tech stack we are utilizing
+- The requirements and dependencies we are utilizing
+- How to run our application
+- How to test our application
+
+We have also took the opportunity to:
+
+- Update dependencies to the latest versions
+- Add `simple-git-hooks` with `lint-staged` for code formatting and linting whenever we are commiting
+- Restructure the codebase for better maintainability
+- Create a CHANGELOG so we know which features we have added or removed
 
 ### Task 4: Test fixing
 
