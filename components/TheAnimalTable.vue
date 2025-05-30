@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { computed } from 'vue'
 import type { Animal } from '~/types'
+import { computed } from 'vue'
 
 const props = defineProps<{
   animals: Animal[]
@@ -40,12 +40,15 @@ const animalsSortedByName = computed(() =>
 table {
   @apply table-auto w-full text-left
 }
+
 td {
   @apply w-40
 }
+
 tr {
   @apply border-b-2
 }
+
 tbody tr {
   @apply hover:bg-gray-200
 }

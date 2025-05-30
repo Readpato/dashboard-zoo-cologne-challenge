@@ -1,10 +1,12 @@
 <script setup lang="ts">
-const { animals } = useAnimals();
+const { animals } = useAnimals()
 </script>
 
 <template>
   <div class="my-10 container mx-auto">
-    <h1 class="text-4xl">Cologne Zoo</h1>
+    <h1 class="text-4xl">
+      Cologne Zoo
+    </h1>
     <div class="my-2">
       <p>
         This is the overview board of the Cologne Zoo. It can be used by
@@ -18,8 +20,10 @@ const { animals } = useAnimals();
       </p>
     </div>
     <div class="mt-6 py-4 border-t border-gray-300">
-      <h2 class="text-2xl">Our (lovely) Animals:</h2>
+      <h2 class="text-2xl">
+        Our (lovely) Animals:
+      </h2>
     </div>
-    <TheAnimalTable v-if="animals" :animals="animals" />
+    <TheAnimalTable v-if="animals" :animals />
   </div>
 </template>
