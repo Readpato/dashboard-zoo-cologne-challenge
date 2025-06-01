@@ -37,7 +37,7 @@ const columns = computed(() => [
     cell: info => info.getValue(),
   }),
   columnHelper.accessor('birthdate', {
-    header: () => h(BaseTableHeaderIcon, { icon: 'cake', title: 'Species' }),
+    header: () => h(BaseTableHeaderIcon, { icon: 'cake', title: 'Age' }),
     cell: info => calculateAgeInYears(new Date(info.getValue())),
   }),
   columnHelper.accessor('weight', {
