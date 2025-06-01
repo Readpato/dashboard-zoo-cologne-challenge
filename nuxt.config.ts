@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     '@nuxt/test-utils/module',
     '@vueuse/nuxt',
     'shadcn-nuxt',
+    '@nuxt/icon',
   ],
   css: ['~/assets/css/main.css'],
   shadcn: {
@@ -18,4 +19,5 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
   },
+  compatibilityDate: '2025-06-01',
 })
