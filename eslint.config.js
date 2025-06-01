@@ -54,6 +54,10 @@ export default antfu(
       'ts/no-use-before-define': 'off',
 
       'vue/component-name-in-template-casing': ['off'],
+      'vue/max-attributes-per-line': ['error', {
+        singleline: 1,
+        multiline: 1,
+      }],
 
       // Do not allow unused expressions
       'no-unused-expressions': ['error'],
