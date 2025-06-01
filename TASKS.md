@@ -152,6 +152,24 @@ Note: Depending on the project, on a more earlier stage I would already have dis
 Additional note on first and second point, I noticed we are using the `index` as a key for our v-for, and that's bad practice, we should always aim to use a proper `id` so we can maintain the state of the component.
 We will address that by expanding our fake data file and updating all necessary types to achieve this
 
+Note on the third point, now we have integrated TanStack Table into our component and app. This will allow us to handle pagination, sorting, filtering, and other features out of the box. Now we can easily add new features in the future with all the TanStack Table capabilities.
+
+While implementing it, I encountered a new scenario, which was really interesting, basically we are asking TanStack table to handle sorting the table by the `name` column. This was actually breaking the original implementation of the first column `#`, which was `cell({row}) => row.index + 1`, this was giving us an incorrect ordering result like `#1, #27, #49, ...`. This was happening because the sorting is applied after the data is recieved and the index is not updated accordingly. So then we had to implement a specific function with TanStack capabilities `cell: ({ row, table }) => ((table.getSortedRowModel()?.flatRows?.findIndex(flatRow => flatRow.id === row.id) || 0) + 1),` which when we break it down it works like this:
+
+1. `({ row, table }) =>**` - Destructures the cell context to get the current row and table instance
+
+2. **`table.getSortedRowModel()`** - Gets the sorted row model from the table (since the table will be sorted by the `name` column)
+
+3. **`?.flatRows`** - Uses optional chaining to safely access the `flatRows` array, which contains all sorted rows in a flat structure
+
+4. **`?.findIndex(flatRow => flatRow.id === row.id)`** - Finds the index position of the current row within the sorted rows by matching row IDs
+
+5. **`|| 0`** - Fallback to 0 if `findIndex` returns -1 (not found) or if any of the optional chaining returns undefined
+
+6. **`+ 1`** - Adds 1 to convert from 0-based array index to 1-based display number (so the first row shows "1" instead of "0")
+
+So if you sort by name and "Zebra" becomes the first row, it will show "1" in the index column, even though it might have been row 50 in the original unsorted data.
+
 ### Task 6: UI Feature 1
 
 The zookeepers want to be able to see all details of an animal. Please create such a view that allows them to do so, outline anything about your process while adding the view below. The zookeepers didn't have time for more information, sorry. They'll surely be glad to criticize the first version intensly though and will want to know why you went for the approach you chose.
