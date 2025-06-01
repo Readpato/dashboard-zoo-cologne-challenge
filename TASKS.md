@@ -185,6 +185,12 @@ I'm a visual person and whenever I'm asked to design something I rather have som
 
 After a quick sketch, here's our wireframe: ![A sketch of the newest feature and how it would work](./public/animal-view.png)
 
+Now, let's start implementing our views by creating a `/pages` folder and then the new view with its respective dynamic routing. Since we already implemented an `uuid` for the `id` property of the animal, we will use that as the route parameter.
+
+Now we have a new folder `pages` with a new structure `animals/[id].vue`. This will allow us to always get the animal by its `id` and display its details. We have also modified `app.vue` to utilize `<NuxtPage>` to render our views and we decided against using `<NuxtLayout>` since for now we only have one where the header is displayed
+
+Next, we will handle the redirection from the table logic so we can have the flow up and running
+
 ### Task 7: Logic Feature
 
 The zookeepers want a new feature: Calculate the food required for the next calendar month. Basically, the zookeepers want to ease their job and buy a month worth of food in advance. In order to do so they want you to calculate and display the food all animals need for the next month.
