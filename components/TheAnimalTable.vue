@@ -29,7 +29,7 @@ const animalsSortedByName = computed(() =>
       </tr>
     </thead>
     <tbody>
-      <tr v-for="({ age, species, gender, weight, name }, animalIndex) in animalsSortedByName" :key="animalIndex">
+      <tr v-for="({ age, species, gender, weight, name, id }, animalIndex) in animalsSortedByName" :key="id">
         <td>{{ animalIndex + 1 }}</td>
         <td>{{ species }}</td>
         <td>{{ name }}</td>
