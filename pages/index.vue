@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const { animals } = useAnimals()
+const { fetchAnimals, animals } = useAnimals()
+
+onMounted(fetchAnimals)
 </script>
 
 <template>
