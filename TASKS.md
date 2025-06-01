@@ -170,6 +170,9 @@ While implementing it, I encountered a new scenario, which was really interestin
 
 So if you sort by name and "Zebra" becomes the first row, it will show "1" in the index column, even though it might have been row 50 in the original unsorted data.
 
+For the fourth point, we installed `shadcn-nuxt` as a module which on it's latest version utilizes [RekaUI](https://reka-ui.com/) (old RadixVue) and TailwindCSS v4. Given that the `@nuxtjs/tailwindcss` was giving issues and we would have to install [tailwind nevertheless as a separated dependency](https://tailwindcss.nuxtjs.org/tailwindcss/configuration#tailwind-css-version) to actually utilize Tailwind v4, we decided to use the `@tailwindcss/vite` package directly. Which allows us to use Tailwind v4 without any issues for the ShadcnVue package.
+Hopefully they fix this, I see that they already allow [initial support for Tailwind v4 with the latest version](https://github.com/nuxt-modules/tailwindcss/pull/980) of `@nuxtjs/tailwindcss` but it's still giving errors for the Shadcn package.
+
 ### Task 6: UI Feature 1
 
 The zookeepers want to be able to see all details of an animal. Please create such a view that allows them to do so, outline anything about your process while adding the view below. The zookeepers didn't have time for more information, sorry. They'll surely be glad to criticize the first version intensly though and will want to know why you went for the approach you chose.
