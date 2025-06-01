@@ -189,7 +189,15 @@ Now, let's start implementing our views by creating a `/pages` folder and then t
 
 Now we have a new folder `pages` with a new structure `animals/[id].vue`. This will allow us to always get the animal by its `id` and display its details. We have also modified `app.vue` to utilize `<NuxtPage>` to render our views and we decided against using `<NuxtLayout>` since for now we only have one where the header is displayed
 
-Next, we will handle the redirection from the table logic so we can have the flow up and running
+Next, we will handle the redirection from the table logic so we can have the flow up and running.
+
+Now  that the basic flow is implemented, I will now proceed with creating the api that will allow us to get a specific animal. I already see that we will need to restructure our `animals.get.ts`,because we are creating the `ANIMALS` array in that file.
+
+Since we don't have a real DB in this case, I will utilize `fakeData.ts` as our source of truth, so we export `ANIMALS` from there so we can utilize the same data for both of our endpoints (and let's not forget about Aaron!)
+
+After we unified our "DB" now I modified the structure of our server folder so we can have `server/api/animals/index.get.ts` and `server/api/animals/[id].get.ts`. This will allow us to group our API endpoints under a same group. On the `[id]` route I added some errors to handle the flow mock request
+
+Now the next thing will be to modify the composable `useAnimals` to handle the new API endpoint. Because before we returning `animals` and `fetch` and executing `fetch` on mount, now we need to modify the structure of it: we make a new ref `animal` and along with `animals` we make them singletons. Then inside of the function we return `fetchAnimal` and `fetchAnimals` which allows us to fetch a single animal or all animals. Given that we removed the original `onMounted` lifecycle hook, we will execute it in the the components were we are going to display that data!
 
 ### Task 7: Logic Feature
 
