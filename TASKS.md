@@ -149,6 +149,9 @@ Note: Depending on the project, on a more earlier stage I would already have dis
 - Typography and layout
 - Responsive design and mobile optimization
 
+Additional note on first and second point, I noticed we are using the `index` as a key for our v-for, and that's bad practice, we should always aim to use a proper `id` so we can maintain the state of the component.
+We will address that by expanding our fake data file and updating all necessary types to achieve this
+
 ### Task 6: UI Feature 1
 
 The zookeepers want to be able to see all details of an animal. Please create such a view that allows them to do so, outline anything about your process while adding the view below. The zookeepers didn't have time for more information, sorry. They'll surely be glad to criticize the first version intensly though and will want to know why you went for the approach you chose.
