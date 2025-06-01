@@ -13,6 +13,7 @@ This project is built using the following technologies:
 - **[Vitest](https://vitest.dev/)** - A blazing fast unit test framework powered by Vite
 - **[ESLint](https://eslint.org/)** - JavaScript/TypeScript linter with Antfu's configuration
 - **[Faker.js](https://fakerjs.dev/)** - Generate massive amounts of fake data for testing
+- **[TanStack Table](https://tanstack.com/table/v8)** - A powerful headless UI table library for tables and datagrids
 - **[pnpm](https://pnpm.io/)** - Fast, disk space efficient package manager
 
 ## Getting Started
