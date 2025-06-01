@@ -1,17 +1,23 @@
 import type { Animal } from '~/types'
 
-export default () => {
-  const animals = ref<Animal[]>([])
+const animals = ref<Animal[]>([])
+const animal = ref<Animal | null>(null)
 
-  const fetch = async (): Promise<Animal[]> => {
+export default () => {
+  const fetchAnimals = async (): Promise<Animal[]> => {
     animals.value = await $fetch('/api/animals')
     return animals.value
   }
 
-  onMounted(fetch)
+  const fetchAnimal = async (id: string): Promise<Animal | null> => {
+    animal.value = await $fetch(`/api/animals/${id}`)
+    return animal.value
+  }
 
   return {
+    animal,
     animals,
-    fetch,
+    fetchAnimal,
+    fetchAnimals,
   }
 }
