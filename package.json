@@ -29,6 +29,7 @@
     "@tanstack/vue-table": "^8.21.3",
     "@types/node": "^22.15.27",
     "@vue/test-utils": "^2.4.5",
+    "@vueuse/core": "^13.3.0",
     "@vueuse/nuxt": "13.3.0",
     "eslint": "^9.27.0",
     "eslint-plugin-vuejs-accessibility": "^2.4.1",
