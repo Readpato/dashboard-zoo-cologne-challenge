@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import type { Animal } from '~/types'
-import { computed } from 'vue'
 
 const { animals } = defineProps<{
   animals: Animal[]
