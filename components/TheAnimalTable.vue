@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { SortingState } from '@tanstack/vue-table'
 import type { Animal } from '~/types'
-import { BaseTableHeaderIcon } from '#components'
+import { BaseTableActions, BaseTableHeaderIcon } from '#components'
 import {
   createColumnHelper,
   FlexRender,
@@ -43,6 +43,10 @@ const columns = computed(() => [
   columnHelper.accessor('weight', {
     header: () => h(BaseTableHeaderIcon, { icon: 'weight', title: 'Weight' }),
     cell: info => info.getValue(),
+  }),
+  columnHelper.display({
+    id: 'actions',
+    cell: () => h(BaseTableActions),
   }),
 ])
 
@@ -86,11 +90,14 @@ const table = useVueTable({
       <TableRow
         v-for="row in table.getRowModel().rows"
         :key="row.id"
+        class="cursor-pointer"
+        @click="$router.push(`/animals/${row.original.id}`)"
       >
         <TableCell
           v-for="cell in row.getVisibleCells()"
           :key="cell.id"
           class="first-letter:uppercase"
+          :class="{ 'w-10': cell.column.id === 'actions' }"
         >
           <FlexRender
             :render="cell.column.columnDef.cell"
