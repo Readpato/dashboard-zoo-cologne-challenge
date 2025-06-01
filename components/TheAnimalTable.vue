@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import type { SortingState } from '@tanstack/vue-table'
 import type { Animal } from '~/types'
+import { BaseTableHeaderIcon } from '#components'
 import {
   createColumnHelper,
   FlexRender,
@@ -24,23 +25,23 @@ const columns = computed(() => [
     cell: ({ row, table }) => ((table.getSortedRowModel()?.flatRows?.findIndex(flatRow => flatRow.id === row.id) || 0) + 1),
   }),
   columnHelper.accessor('species', {
-    header: 'Species',
+    header: () => h(BaseTableHeaderIcon, { icon: 'leaf', title: 'Species' }),
     cell: info => info.getValue(),
   }),
   columnHelper.accessor('name', {
-    header: 'Name',
+    header: () => h(BaseTableHeaderIcon, { icon: 'id-card', title: 'Name' }),
     cell: info => info.getValue(),
   }),
   columnHelper.accessor('gender', {
-    header: 'Gender',
+    header: () => h(BaseTableHeaderIcon, { icon: 'transgender', title: 'Gender' }),
     cell: info => info.getValue(),
   }),
   columnHelper.accessor('birthdate', {
-    header: 'Age',
+    header: () => h(BaseTableHeaderIcon, { icon: 'cake', title: 'Species' }),
     cell: info => calculateAgeInYears(new Date(info.getValue())),
   }),
   columnHelper.accessor('weight', {
-    header: 'Weight',
+    header: () => h(BaseTableHeaderIcon, { icon: 'weight', title: 'Weight' }),
     cell: info => info.getValue(),
   }),
 ])
