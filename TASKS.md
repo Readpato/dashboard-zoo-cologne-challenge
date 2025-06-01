@@ -179,6 +179,12 @@ The zookeepers want to be able to see all details of an animal. Please create su
 
 // Your solution
 
+Alrighty, to continue with this solution, I will quickly design how the flow should look like to get to that view and also what kind of details will be displayed using excalidraw.
+
+I'm a visual person and whenever I'm asked to design something I rather have something tangible which I can show to the client and get feedback on. So I'll start by creating a wireframe!
+
+After a quick sketch, here's our wireframe: ![A sketch of the newest feature and how it would work](./public/animal-view.png)
+
 ### Task 7: Logic Feature
 
 The zookeepers want a new feature: Calculate the food required for the next calendar month. Basically, the zookeepers want to ease their job and buy a month worth of food in advance. In order to do so they want you to calculate and display the food all animals need for the next month.
