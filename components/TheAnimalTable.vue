@@ -100,7 +100,7 @@ const table = useVueTable({
 </template>
 
 <style scoped>
-table {
+/* table {
   @apply table-auto w-full text-left
 }
 
@@ -114,5 +114,5 @@ tr {
 
 tbody tr {
   @apply hover:bg-gray-200
-}
+} */
 </style>
