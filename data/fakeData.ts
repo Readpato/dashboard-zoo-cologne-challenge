@@ -35,3 +35,5 @@ export const fakeAnimal = (): Animal => {
     }),
   }
 }
+
+export const ANIMALS = [AARON, ...Array.from({ length: 49 }, () => fakeAnimal())]
