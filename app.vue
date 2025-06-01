@@ -24,6 +24,9 @@ const { animals } = useAnimals()
         Our (lovely) Animals:
       </h2>
     </div>
-    <TheAnimalTable v-if="animals" :animals />
+    <TheAnimalTable
+      v-if="animals"
+      :animals
+    />
   </div>
 </template>
