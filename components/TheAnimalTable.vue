@@ -7,9 +7,18 @@ const props = defineProps<{
 }>()
 
 const animalsSortedByName = computed(() =>
-  props.animals.slice().sort((animalA, animalB) =>
-    animalA.weight - animalB.weight,
-  ),
+  props.animals.slice().sort((animalA, animalB) => {
+    const nameA = animalA.name.toUpperCase()
+    const nameB = animalB.name.toUpperCase()
+    if (nameA < nameB) {
+      return -1
+    }
+    if (nameA > nameB) {
+      return 1
+    }
+
+    return 0
+  }),
 )
 </script>
 
@@ -19,17 +28,19 @@ const animalsSortedByName = computed(() =>
       <tr>
         <th>Index</th>
         <th>Species</th>
+        <th>Name</th>
         <th>Gender</th>
         <th>Age (yrs)</th>
         <th>Weight (kg)</th>
       </tr>
     </thead>
     <tbody>
-      <tr v-for="({ species, gender, birthdate, weight }, animalIndex) in animalsSortedByName" :key="animalIndex">
+      <tr v-for="({ species, gender, birthdate, weight, name }, animalIndex) in animalsSortedByName" :key="animalIndex">
         <td>{{ animalIndex + 1 }}</td>
         <td>{{ species }}</td>
+        <td>{{ name }}</td>
         <td>{{ gender }}</td>
-        <td>{{ birthdate }}</td>
+        <td>{{ calculateAgeInYears(new Date(birthdate)) }}</td>
         <td>{{ weight }}</td>
       </tr>
     </tbody>
