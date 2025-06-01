@@ -129,6 +129,10 @@ Please fix the two above problems and outline what was necessarry to do so.
 
 // Your solution
 
+Alrighty, first things I notice is that indeed the column and rows from the `TheAnimalTable` has been deleted, that our computed property is actually named correctly (`animalsSortedByName`) but inside the logic is sorting them by their weight.
+
+Regarding the last point, we can definetly utilize our modified `calculateAgeInYears` but we will need to pass a proper `Date` object so the function actually works! Let's get on with it.
+
 ### Task 6: UI Feature 1
 
 The zookeepers want to be able to see all details of an animal. Please create such a view that allows them to do so, outline anything about your process while adding the view below. The zookeepers didn't have time for more information, sorry. They'll surely be glad to criticize the first version intensly though and will want to know why you went for the approach you chose.
