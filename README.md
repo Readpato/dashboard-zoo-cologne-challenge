@@ -14,6 +14,7 @@ This project is built using the following technologies:
 - **[ESLint](https://eslint.org/)** - JavaScript/TypeScript linter with Antfu's configuration
 - **[Faker.js](https://fakerjs.dev/)** - Generate massive amounts of fake data for testing
 - **[TanStack Table](https://tanstack.com/table/v8)** - A powerful headless UI table library for tables and datagrids
+- **[Shadcn Vue](https://shadcn-vue.com/)** - UI Library for building modern web applications
 - **[pnpm](https://pnpm.io/)** - Fast, disk space efficient package manager
 
 ## Getting Started
@@ -70,13 +71,15 @@ The project follows standard Nuxt.js conventions:
 
 | Directory      | Purpose                                     |
 | -------------- | ------------------------------------------- |
+| `assets/`      | Assets such as images, styles, and more     |
 | `components/`  | Vue components (auto-imported)              |
 | `composables/` | Vue 3 composables for shared reactive logic |
 | `data/`        | Static data and mock data files             |
+| `public/`      | Static files won't be modified by build     |
 | `server/api/`  | Server-side API endpoints                   |
+| `test/`        | Unit tests                                  |
 | `types/`       | TypeScript type definitions                 |
 | `utils/`       | Utility functions (auto-imported)           |
-| `test/`        | Unit tests                                  |
 
 **Configuration files:**
 
