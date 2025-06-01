@@ -47,7 +47,7 @@ const columns = computed(() => [
 
 const table = useVueTable({
   get data() {
-    return computed(() => animals)
+    return animals
   },
   columns: columns.value,
   state: {
@@ -61,58 +61,42 @@ const table = useVueTable({
 </script>
 
 <template>
-  <table>
-    <thead>
-      <tr
+  <Table>
+    <TableHeader>
+      <TableRow
         v-for="headerGroup in table.getHeaderGroups()"
         :key="headerGroup.id"
       >
-        <th
+        <TableHead
           v-for="header in headerGroup.headers"
           :key="header.id"
-          :colSpan="header.colSpan"
+          :col-span="header.colSpan"
+          class="text-xs"
         >
           <FlexRender
             v-if="!header.isPlaceholder"
             :render="header.column.columnDef.header"
             :props="header.getContext()"
           />
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr
+        </TableHead>
+      </TableRow>
+    </TableHeader>
+    <TableBody>
+      <TableRow
         v-for="row in table.getRowModel().rows"
         :key="row.id"
       >
-        <td
+        <TableCell
           v-for="cell in row.getVisibleCells()"
           :key="cell.id"
+          class="first-letter:uppercase"
         >
           <FlexRender
             :render="cell.column.columnDef.cell"
             :props="cell.getContext()"
           />
-        </td>
-      </tr>
-    </tbody>
-  </table>
+        </TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
 </template>
-
-<style scoped>
-/* table {
-  @apply table-auto w-full text-left
-}
-
-td {
-  @apply w-40
-}
-
-tr {
-  @apply border-b-2
-}
-
-tbody tr {
-  @apply hover:bg-gray-200
-} */
-</style>
