@@ -2,22 +2,16 @@
 import type { Animal } from '~/types'
 import { computed } from 'vue'
 
-const props = defineProps<{
+const { animals } = defineProps<{
   animals: Animal[]
 }>()
 
 const animalsSortedByName = computed(() =>
-  props.animals.slice().sort((animalA, animalB) => {
-    const nameA = animalA.name.toUpperCase()
-    const nameB = animalB.name.toUpperCase()
-    if (nameA < nameB) {
-      return -1
-    }
-    if (nameA > nameB) {
-      return 1
-    }
-
-    return 0
+  animals.slice().map(animal => ({
+    ...animal,
+    age: calculateAgeInYears(new Date(animal.birthdate)),
+  })).sort((animalA, animalB) => {
+    return animalA.name.localeCompare(animalB.name, 'en', { sensitivity: 'base' })
   }),
 )
 </script>
@@ -35,12 +29,12 @@ const animalsSortedByName = computed(() =>
       </tr>
     </thead>
     <tbody>
-      <tr v-for="({ species, gender, birthdate, weight, name }, animalIndex) in animalsSortedByName" :key="animalIndex">
+      <tr v-for="({ age, species, gender, weight, name }, animalIndex) in animalsSortedByName" :key="animalIndex">
         <td>{{ animalIndex + 1 }}</td>
         <td>{{ species }}</td>
         <td>{{ name }}</td>
         <td>{{ gender }}</td>
-        <td>{{ calculateAgeInYears(new Date(birthdate)) }}</td>
+        <td>{{ age }}</td>
         <td>{{ weight }}</td>
       </tr>
     </tbody>
