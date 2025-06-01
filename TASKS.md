@@ -135,6 +135,20 @@ This can only mean one thing, somebody has meddled with our code! ![OG Meme of F
 
 Regarding the last point, we can definetly utilize our modified `calculateAgeInYears` but we will need to pass a proper `Date` object so the function actually works! Let's get on with it.
 
+Now that our app is up and running and our staff can use it, we will proceed with the refactor of the component, UI and improving our code:
+
+- First we will check the code that we wrote for our `animalsSortedByName` function could be made simpler.
+- Secondly, we will try to remove the age calculations that appear on the table from the `<template>` so we can handle all of our logic in our `<script>` (I always try to do do it like this and only do things in the template if it's super necessary)
+- Third, we will integrate [TanStack Table](https://tanstack.com/table/latest) to our TechStack so we can work easily with tables improving the DX and UX!
+- Fourth, our app is designless as of now and we have to show the Duisburg Zoo that we also can do nice things! Given that currently I'm a one man team, I will implement a UI library [ShadcnVue](https://www.shadcn-vue.com/) which will allow to centralize the styling and components of our app.
+
+Note: Depending on the project, on a more earlier stage I would already have discussed with the designer the UI/UX design, including:
+
+- User flow and navigation
+- Design System
+- Typography and layout
+- Responsive design and mobile optimization
+
 ### Task 6: UI Feature 1
 
 The zookeepers want to be able to see all details of an animal. Please create such a view that allows them to do so, outline anything about your process while adding the view below. The zookeepers didn't have time for more information, sorry. They'll surely be glad to criticize the first version intensly though and will want to know why you went for the approach you chose.
