@@ -18,6 +18,14 @@ const filteredAnimalData = computed<Omit<Animal, 'id' | 'name' | 'birthdate'> & 
   }
 })
 
+const monthlyFood = computed(() => {
+  if (!animal.value) {
+    return null
+  }
+
+  return calculateFoodInMonth(animal.value)
+})
+
 onMounted(() => fetchAnimal(route.params.id as string))
 </script>
 
@@ -58,6 +66,20 @@ onMounted(() => fetchAnimal(route.params.id as string))
               </dt>
               <dd class="mb-2 text-gray-600 first-letter:capitalize">
                 {{ value }} <span v-if="ANIMAL_MEASUREMENTS[key]">{{ ANIMAL_MEASUREMENTS[key] }}</span>
+              </dd>
+            </div>
+            <div
+              class="flex text-sm justify-between py-2 first:pt-0 last:pb-0"
+            >
+              <dt class="font-medium text-gray-900 first-letter:capitalize flex justify-center items-center">
+                <BaseIcon
+                  name="beef"
+                  class="mr-2 text-gray-700"
+                />
+                <span>Monthly Food</span>
+              </dt>
+              <dd class="mb-2 text-gray-600 first-letter:capitalize">
+                {{ monthlyFood }} <span>{{ ANIMAL_MEASUREMENTS.weight }}</span>
               </dd>
             </div>
           </dl>
