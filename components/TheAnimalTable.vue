@@ -61,6 +61,14 @@ const columns = computed(() => [
     cell: info => `${info.getValue()} ${ANIMAL_MEASUREMENTS.weight}`,
   }),
   columnHelper.display({
+    id: 'requiredFood',
+    header: () => h(BaseTableHeaderIcon, {
+      icon: 'beef',
+      title: 'Monthly Food',
+    }),
+    cell: ({ row }) => `${calculateFoodInMonth(row.original)} ${ANIMAL_MEASUREMENTS.weight}`,
+  }),
+  columnHelper.display({
     id: 'actions',
     cell: () => h(BaseTableActions),
   }),
