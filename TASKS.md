@@ -233,6 +233,27 @@ To calculate the food an animal needs in kilograms in 1 day, the zookeepers use 
 
 // Your solution
 
+Oh wow, this one will be need a convoluted if case to solve.
+
+At a first glance, I think we do not need to modify our original `Animal` type and our DB, and instead we can create an util which we pass our `animal` to it so we can calculate it.
+Let's start by doing that, we will call it `calculateFoodInMonth`, and also since the formula that the staff provided is calculated in `days` we will need to multiply it for 30 (for a median)
+- Following the instructions:
+1) The first point is not so clear, do they mean that the calculation of animal size divided 250 is the food? As we do not have an accurate specification we will assume it is, we will call it `requiredFood`
+2) Secondly we have a conditional that depends on the age of the animal, there are only two cases that might affect the `requiredFood` so we will lave it as it is (here we are also repeating what I said in line 203, we should have definetly added `age` as a property that is calculated in backend)
+3) Third case, if the animal has `cherry` as favourite fruit, we add 28 kgs to `requiredFood`
+4) Fourth case, we add 20% if the animal is male
+5) The animal is a fish, we set the food to 0kg (poor fish!)
+
+Nice, now we try to integrate it into the main table to see how it looks and we can clearly see that we are having some results. Let's round our result so we can have a more precise number, we will use `Math.ceil()` for that.
+
+Now we have a new property that doesn't enter into our `Animal` interface, but we would definetely add that in the database so we can handle all these types of calculations over there if this would have been production. Let's update our constants nevertheless so we can have all the labels and icons necessary
+
+Let's add the property also into our lovely card (Animal View).
+
+Since we are passing a ref into our util, I will also modify the util to accept `MaybeRefORGetter<Animal>` and then uwrap it with `toValue` so we can safely access it.
+
+Alright, feature implemented. I really don't like the way it's implemented as of now, because like I said, these should be implemented directly into the `Animal` interface, so we can handle it from there. This would be a calculation we do in our backend but since it's a feature our staff needs to work efficently, we implement it as it is and on the next iteration we refactor it! I like to follow this [Addy Osmani post: First do it, then do it right, then do it better.](https://addyo.substack.com/p/first-do-it-then-do-it-right-then) as a guideline. We could have spent hours and hours overengineering this feature but it's more valuable to ship something that it's tangible and then move forwards from it.
+
 ### Task 8: Plan New Feature
 
 After the disastrous specification of the new UI feature in the previous task, the zooplanners now want to sit down with you to plan the next feature better before implementation begins. Together you come up with requirements that you write down from the user-perspective (the zookeepers):
