@@ -9,6 +9,7 @@ const ignores = [
   '**/node_modules/**',
   'public',
   '**/public/**',
+  '**/*.md',
 ]
 
 export default antfu(

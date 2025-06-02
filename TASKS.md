@@ -199,6 +199,22 @@ After we unified our "DB" now I modified the structure of our server folder so w
 
 Now the next thing will be to modify the composable `useAnimals` to handle the new API endpoint. Because before we returning `animals` and `fetch` and executing `fetch` on mount, now we need to modify the structure of it: we make a new ref `animal` and along with `animals` we make them singletons. Then inside of the function we return `fetchAnimal` and `fetchAnimals` which allows us to fetch a single animal or all animals. Given that we removed the original `onMounted` lifecycle hook, we will execute it in the the components were we are going to display that data!
 
+Now that we have all the data available, I will start displaying the data in the proper animal view. This one will utilize the card component from Shadcn to make it look nicer. Here I wanted to allow flexibility when displaying the properties of the animal, but of course some things aren't needed to display such as `name` and `id`, because `name` is used already on the title and `id` is more by use IT's than the actual staff of the Zoo.
+Given this case I have created a computed property which filters our name and id, and allows me to diplay the properties I choose so inside of the card. After implementing some styling and adding some structure with semantic HTML I found out that I was having the same problem as in `TheAnimalTable` where we where executing `calculateAgeInYears` in the template. So I had to add an extra step on the return, where we say that `birthdate: calculateAgeInYears(new Date(rest.birthdate))`. Looking at this there are already two places where we are actually implementing this "functionality". At this rate I think it would be better to actually create a calculated `age` property that comes directly from the backend. This could be a nice refactor for the future.
+
+After rendering everything in the card, I noticed that I was rendering everything straight what we got from the object, and that was causing some formatting issues, for example we were rendering `favouriteFruit` instead of `'Favorite Fruit'` size-20and we weren't adding the measurements to specific properties like `weight` and `height`. I decided to create a `constant.ts` file where we address all labels and units that we would like to display in our frontend. By creating three constants `ANIMAL_KEYS_LABELS`, `ANIMAL_MEASUREMENTS`, and `ANIMAL_KEYS_ICON` we can assure consistency across all of the app to what we display for them. One thing that I dont really like is the complicated generic type for the `ANIMAL_MEASUREMENTS`
+
+```ts
+  [K in06 keyof Animal]: K extends 'height' | 'weight' | 'birthdate' ? string : null
+```
+
+I know I could actually write `Record<keyof Animal, string | null>` but in this case I actually know which properties do have a value and which not.
+
+Now that we have this constant in places, I can also integrate them into the `TheAnimalTable` component, so we can have both views displaying the same measurements, labels and icons :)
+(It's funny that now can have a frog or a fish that weighs 222kg haha)
+
+Small note for this task: I notice that whenever you access a different animal card, the previous values of the animal are briefly displayed, this is happening because the the ref is still holding the old value until the `onMounted` fake `fetch` finishes executing. On a real project, this would be replaced with a `Skeleton` component or a spinning `Loading` component whenever the value is loading/fetching.
+
 ### Task 7: Logic Feature
 
 The zookeepers want a new feature: Calculate the food required for the next calendar month. Basically, the zookeepers want to ease their job and buy a month worth of food in advance. In order to do so they want you to calculate and display the food all animals need for the next month.
