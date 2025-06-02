@@ -205,7 +205,7 @@ Given this case I have created a computed property which filters our name and id
 After rendering everything in the card, I noticed that I was rendering everything straight what we got from the object, and that was causing some formatting issues, for example we were rendering `favouriteFruit` instead of `'Favorite Fruit'` size-20and we weren't adding the measurements to specific properties like `weight` and `height`. I decided to create a `constant.ts` file where we address all labels and units that we would like to display in our frontend. By creating three constants `ANIMAL_KEYS_LABELS`, `ANIMAL_MEASUREMENTS`, and `ANIMAL_KEYS_ICON` we can assure consistency across all of the app to what we display for them. One thing that I dont really like is the complicated generic type for the `ANIMAL_MEASUREMENTS`
 
 ```ts
-  [K in06 keyof Animal]: K extends 'height' | 'weight' | 'birthdate' ? string : null
+  [K in keyof Animal]: K extends 'height' | 'weight' | 'birthdate' ? string : null
 ```
 
 I know I could actually write `Record<keyof Animal, string | null>` but in this case I actually know which properties do have a value and which not.
@@ -214,6 +214,8 @@ Now that we have this constant in places, I can also integrate them into the `Th
 (It's funny that now can have a frog or a fish that weighs 222kg haha)
 
 Small note for this task: I notice that whenever you access a different animal card, the previous values of the animal are briefly displayed, this is happening because the the ref is still holding the old value until the `onMounted` fake `fetch` finishes executing. On a real project, this would be replaced with a `Skeleton` component or a spinning `Loading` component whenever the value is loading/fetching.
+
+Funny error, whenever I was trying to commit this part, eslint was trying to lint fix line 208 and it was giving me a cryptic error about a missing comma. Apparently it was trying to make sense of the generic typing! I have disabled it in the `eslint.config.js` now
 
 ### Task 7: Logic Feature
 
