@@ -362,6 +362,7 @@ Things that could be expanded on are:
 - CI/CD: Pipeline using GitHub Actions (if using Github ofc) or similar tools to automate the build, test, and deployment process. I normally use [autofix](https://autofix.ci/) which is the same tool that people over at Nuxt use.
 - Internationalization: Adding support for multiple languages and locales to the application, we could use [i18n](https://github.com/nuxt-modules/i18n) for that
 - Error Monitoring: Implement tools like Sentry or similar services to track and report errors in production.
+- Loading, Reload and Error states: Super important! Since we are using a fake server for this challenge, I haven't implemented any loading, reloading or error states. This should be absolutely addressed in a production environment.
 
 Going back to task 8, this can become very complex and "utopian" and I think the best way to proceed from here is to speak and listen to my teammates and our clients to understand their perspective in UX (and DX!), feedback and painpoints when using a real app to properly prioritize what to implement next.
 
