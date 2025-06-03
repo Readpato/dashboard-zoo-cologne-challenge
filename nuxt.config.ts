@@ -2,6 +2,16 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: 'en',
+      },
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/nuxt.ico' },
+      ],
+    },
+  },
   modules: [
     '@nuxt/test-utils/module',
     '@nuxt/test-utils/module',
