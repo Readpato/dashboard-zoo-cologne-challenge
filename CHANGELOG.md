@@ -1,6 +1,40 @@
 # Changelog
 
 
+## v1.0.0
+
+[compare changes](https://github.com/Readpato/dashboard-zoo-cologne-challenge/compare/v0.1.1...v1.0.0)
+
+### 🚀 Enhancements
+
+- **utils/calculateFoodInMonth:** Create util to calculate food in month ([d495a8e](https://github.com/Readpato/dashboard-zoo-cologne-challenge/commit/d495a8e))
+- **components/TheAnimalTable:** Implement calculateFoodInMonth util and display ([30b8ce6](https://github.com/Readpato/dashboard-zoo-cologne-challenge/commit/30b8ce6))
+- **pages/animals/[id]:** Implement calculateFoodInMonth util and display ([c952731](https://github.com/Readpato/dashboard-zoo-cologne-challenge/commit/c952731))
+- **pages&app:** Add title to each view ([c9c24f5](https://github.com/Readpato/dashboard-zoo-cologne-challenge/commit/c9c24f5))
+
+### 💅 Refactors
+
+- **nuxt.config:** Add html lang and favicon ([341f170](https://github.com/Readpato/dashboard-zoo-cologne-challenge/commit/341f170))
+- **BaseTableActions:** Remove cta, make it only an icon ([a62c391](https://github.com/Readpato/dashboard-zoo-cologne-challenge/commit/a62c391))
+
+### 🏡 Chore
+
+- **TASKS.md/07:** Add implementation notes ([2a8f6c4](https://github.com/Readpato/dashboard-zoo-cologne-challenge/commit/2a8f6c4))
+- **README.md:** Add codeblock ([67d3af4](https://github.com/Readpato/dashboard-zoo-cologne-challenge/commit/67d3af4))
+- **TASKS.md/08:** Add notes to complete task ([d444be6](https://github.com/Readpato/dashboard-zoo-cologne-challenge/commit/d444be6))
+- Add nuxt favicon ([4f0a40e](https://github.com/Readpato/dashboard-zoo-cologne-challenge/commit/4f0a40e))
+- **TASKS.md/09:** Add initial notes ([aeeb8af](https://github.com/Readpato/dashboard-zoo-cologne-challenge/commit/aeeb8af))
+- **README.md:** Update readme with latest changes ([e21b080](https://github.com/Readpato/dashboard-zoo-cologne-challenge/commit/e21b080))
+- **TASKS.md/09:** Add final notes ([f805caf](https://github.com/Readpato/dashboard-zoo-cologne-challenge/commit/f805caf))
+
+### 🎨 Styles
+
+- **App.vue:** Make header sticky ([faf8e0c](https://github.com/Readpato/dashboard-zoo-cologne-challenge/commit/faf8e0c))
+
+### ❤️ Contributors
+
+- Patrick Raedler ([@Readpato](https://github.com/Readpato))
+
 ## v0.1.1
 
 [compare changes](https://github.com/Readpato/dashboard-zoo-cologne-challenge/compare/v0.1.0...v0.1.1)
