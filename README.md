@@ -17,7 +17,6 @@ This project is built using the following technologies:
 - **[Shadcn Vue](https://shadcn-vue.com/)** - UI Library for building modern web applications
 - **[pnpm](https://pnpm.io/)** - Fast, disk space efficient package manager
 - **[NuxtIcon](https://github.com/nuxt-modules/icon)** - Leverages Iconify under the hood
--
 
 ## Getting Started
 
