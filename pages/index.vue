@@ -1,4 +1,8 @@
 <script setup lang="ts">
+useHead({
+  title: 'Overview',
+})
+
 const { fetchAnimals, animals } = useAnimals()
 
 onMounted(fetchAnimals)

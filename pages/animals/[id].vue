@@ -4,6 +4,10 @@ import { ANIMAL_KEYS_ICON, ANIMAL_KEYS_LABELS, ANIMAL_MEASUREMENTS } from '~/dat
 
 const { fetchAnimal, animal } = useAnimals()
 
+useHead({
+  title: () => animal.value ? animal.value.name : 'Animal',
+})
+
 const route = useRoute()
 
 const filteredAnimalData = computed<Omit<Animal, 'id' | 'name' | 'birthdate'> & { birthdate: number } | null>(() => {
