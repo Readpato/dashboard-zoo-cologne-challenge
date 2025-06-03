@@ -22,8 +22,10 @@ This project is built using the following technologies:
 
 ### Prerequisites
 
-- Node.js (version 18 or higher)
-- pnpm (version 10.11.0 or higher)
+- Node.js (>=22.16.0)
+- PNPM (>=10.11)
+
+It's strongly recommended to utilize a node version manager like [NVM](https://github.com/nvm-sh/nvm) or [FNM](https://github.com/Schniz/fnm)
 
 ### Installation
 
@@ -48,13 +50,6 @@ pnpm install
 | `pnpm test-for-reviewer` | Build and test (used for code review)   |
 
 ### Development
-
-Requirements:
-
-- Node.js (>=22.16.0)
-- PNPM (>=10.11)
-
-It's strongly recommended to utilize a node version manager like [NVM](https://github.com/nvm-sh/nvm) or [FNM](https://github.com/Schniz/fnm)
 
 To start developing, run:
 
