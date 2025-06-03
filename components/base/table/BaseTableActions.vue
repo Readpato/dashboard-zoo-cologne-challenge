@@ -1,16 +1,17 @@
 <template>
   <TooltipProvider>
     <Tooltip>
-      <TooltipTrigger>
-        <Button
-          variant="ghost"
-          class="size-6 p-0 cursor-pointer"
+      <TooltipTrigger as-child>
+        <div
+          class="inline-flex items-center justify-center size-6 text-muted-foreground hover:bg-gray-300/20 transition-colors rounded-xl"
+          role="img"
+          aria-label="Additional information available"
         >
           <BaseIcon
             name="info"
-            class="text-xs text-muted-foreground"
+            class="text-xs"
           />
-        </Button>
+        </div>
       </TooltipTrigger>
       <TooltipContent>
         <p>See more information</p>
