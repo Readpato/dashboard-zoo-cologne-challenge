@@ -353,3 +353,20 @@ Revisit docs from step 3, see if you want to add anything. Also think about bonu
 // Your solution
 
 Before closing the challenge I would like to address the SEO issues (title, language in <html/> tag and some issues that arised when checking the accessibility of the app. I normally utilize this [WAVE browser extension](https://wave.webaim.org/extension/) to handle this cases.
+
+To wrap up the challenge I want to say that I had a lot of fun implementing it! Thank you for creating it, it was a great experience. I think it could be expanded even more but to refrain from overengineering™ it I will leave it as it is :)
+
+Things that could be expanded on are:
+
+- Testing: E2E tests with tools like Cypress or Playwright. Also continuing to test the composables and utils that were implemented (like `calculateFoodInMonth`)
+- CI/CD: Pipeline using GitHub Actions (if using Github ofc) or similar tools to automate the build, test, and deployment process. I normally use [autofix](https://autofix.ci/) which is the same tool that people over at Nuxt use.
+- Internationalization: Adding support for multiple languages and locales to the application, we could use [i18n](https://github.com/nuxt-modules/i18n) for that
+- Error Monitoring: Implement tools like Sentry or similar services to track and report errors in production.
+
+Going back to task 8, this can become very complex and "utopian" and I think the best way to proceed from here is to speak and listen to my teammates and our clients to understand their perspective in UX (and DX!), feedback and painpoints when using a real app to properly prioritize what to implement next.
+
+Alrighty, thanks for reading everything.
+It was a pleasure to work as the new IT Director of the Zoo of Cologne :)
+
+All the best,
+Pato
