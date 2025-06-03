@@ -351,3 +351,5 @@ Like the guideline says, the task could become quite complex, so it's better to 
 Revisit docs from step 3, see if you want to add anything. Also think about bonuses. Add a general comment about anything (inside the universe of the challenge or out of it) if you want to.
 
 // Your solution
+
+Before closing the challenge I would like to address the SEO issues (title, language in <html/> tag and some issues that arised when checking the accessibility of the app. I normally utilize this [WAVE browser extension](https://wave.webaim.org/extension/) to handle this cases.
