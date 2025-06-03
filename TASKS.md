@@ -286,6 +286,66 @@ Don't spend more thatn 15-30 minutes here - planning like this can quickly becom
 
 // Your solution
 
+This is clearly an improvement from the previous task guideline! Let's go Cologne Zoo!
+
+Alright, to start planning this I will note down some scribbles on things that need to happen to accomplish this:
+
+- We will need to firstly create a new table in our DB to hold the planned meal, the table will need to have 4 columns:
+    - `animal_id`: Which matches one of our own lovely animals
+    - `selected_fruit`: Matches the favourite fruit of said animalId unless it's selected otherwise
+    - `required_food`: Amount of food required to feed the animal
+    - `planned_date`: Date when the meal will be planned for
+- We will need a few endpoints:
+    - A CRUD of endpoints for planned meals
+    - One to fetch all planned meals (with pagination) which return all the planned meals in a grouped format:
+
+    For example:
+
+    ```json
+    [
+      {
+        "date": "2025-05-03",
+        "id": "1212312cd-1234567890-123hjasda-1234567890",
+        "meals": [
+          {
+            "animal": {
+                "id": "4136cd0b-d90b-4af7-b485-5d1ded8db252",
+                ...,
+            },
+            "selected_fruit": "cherries",
+            "required_food": 10
+          }
+        ]
+      }
+    ]
+    ```
+- New view where we will have a custom collapsible component of tasks and a button that allow you to add more planned meals
+    - Whenever we click on the button, a modal form will appear with 3 form fields
+        - Animal Field (Select): Allows you to select a specific animal
+        - Fruit Field (Select): Allows you to select a specific fruit from all the fruits that we have in the DB
+        - Food Field: Will be automatically calculated based on the selection of animal and fruit
+    - For the collapsibles, the title will be the date of the planned meal, how many there are.
+        - Inside of them, there will be items that display the animal, fruit, and food required and at the end of the collapsible, three buttons that allow you to mark as done, delete or edit the task.
+- Like we did with the previous feature, I will do a rough wireframe sketch to visualize how it would look like.
+
+Before even doing the sketch, already some questions arise, for example:
+- How do we differentiate between animals in the select field? There might be many with the same name, species, etc
+- Whenever the creation is implemented, to best improve UX, how do we handle long list of tasks? Infinite scrolling or pagination?
+- Would we also like to display the next planned view in the specific animal view?
+- We should also disable the selection of any animal that's a Fish, because since they have 0 food to eat, they don't need to be fed.
+
+While designed I realized we could also integrate another endpoint to actually fetch the meals whenever the collapsible opens. I think in this way we could reduce the size of requests to the server and improve the performance of the overall view
+
+Here are the quick sketches
+
+First for the planned meal view:
+![A sketch of the newest feature and how it would work](./public/planned-meal-view.png)
+
+Secondly, for the form:
+![A sketch of the newest feature and how it would work](./public/planned-meal-form.png)
+
+Like the guideline says, the task could become quite complex, so it's better to have a small MVP up and running and iterate from there until we get the best results :)
+
 ### Task 9: Finish the documentation
 
 Revisit docs from step 3, see if you want to add anything. Also think about bonuses. Add a general comment about anything (inside the universe of the challenge or out of it) if you want to.
